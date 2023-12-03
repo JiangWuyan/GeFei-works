@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>展示文本</title>
+    <title>域名查询</title>
 </head>
 <body>
-    <h1>Gefei</h1>
+    <h1>域名查询</h1>
+    <input type="text" id="domainName" placeholder="输入域名，例如 'qiuyumi'">
+    <input type="text" id="domainSuffix" placeholder="输入后缀，例如 'com'">
+    <button onclick="checkDomain()">查询</button>
+    
+    <div id="result"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
