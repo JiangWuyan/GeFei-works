@@ -3,16 +3,28 @@ const fetch = require('node-fetch');
 const cors = require('cors');
 const app = express();
 
-app.use(cors()); // 启用CORS
+// 使用cors中间件启用CORS，对所有来源开放
+app.use(cors());
 
 app.get('/whois', async (req, res) => {
     const { name, suffix } = req.query;
+
+    // 设置CORS相关的头部
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
     try {
         const response = await fetch(`https://whois.freeaiapi.xyz/?name=${name}&suffix=${suffix}`);
-        const data = await response.json();
-        res.json(data);
+        if (response.ok) {
+            const data = await response.json();
+            res.json(data);
+        } else {
+            // 处理非成功的响应
+            res.status(response.status).send(`Error: ${response.statusText}`);
+        }
     } catch (error) {
-        res.status(500).send('Server Error');
+        // 处理网络或其他错误
+        res.status(500).send(`Server Error: ${error}`);
     }
 });
 
