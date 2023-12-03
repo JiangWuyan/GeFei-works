@@ -16,7 +16,7 @@ function checkDomain() {
         })
         .catch(error => {
             console.error('Error:', error);
-            resultDiv.innerHTML = '<p>查询失败！请联系 jhhofficail@gmail.com</p>';
+            resultDiv.innerHTML = '<p>查询失败！请联系jhhofficail@gmail.com</p>';
             queryButton.disabled = false;
             queryButton.textContent = '查询';
         });
