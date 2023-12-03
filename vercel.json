@@ -9,19 +9,12 @@
   "routes": [
     {
       "src": "/whois/(.*)",
-      "dest": "/server/app.js"
-    },
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/script.js",
-      "dest": "/script.js"
+      "dest": "server/app.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/$1",
+      "continue": true
     }
   ]
 }
