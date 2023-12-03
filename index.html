@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>域名查询</title>
+    <style>
+        input[type="text"] {
+            width: 300px;
+            padding: 20px;
+            margin: 5px 0;
+        }
+        button {
+            padding: 20px 20px;
+            margin: 5px 0;
+        }
+        .small-text {
+            color: grey;
+            font-size: 0.8em;
+        }
+    </style>
 </head>
 <body>
     <h1>域名查询</h1>
     <input type="text" id="domainName" placeholder="输入域名，例如 'qiuyumi'">
     <input type="text" id="domainSuffix" placeholder="输入后缀，例如 'com'">
-    <button onclick="checkDomain()">查询</button>
+    <button id="queryButton" onclick="checkDomain()">查询</button>
+    <button onclick="clearInputs()">清空</button>
     
+    <p class="small-text">*暂时支持 com, net, org, me, xyz, info, io, co, ai, biz, us 等后缀域名</p>
     <div id="result"></div>
 
     <script src="script.js"></script>
