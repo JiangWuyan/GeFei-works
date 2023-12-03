@@ -8,7 +8,20 @@ function checkDomain() {
     queryButton.textContent = '查询中...';
 
     fetch(`https://onereed.xyz/whois?name=${domainName}&suffix=${domainSuffix}`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('网络响应不是OK');
+            }
+            return response.text();
+        })
+        .then(text => {
+            try {
+                return JSON.parse(text);
+            } catch (e) {
+                console.error('解析JSON时出错:', text);
+                throw e;
+            }
+        })
         .then(data => {
             displayResult(data);
             queryButton.disabled = false;
@@ -16,7 +29,7 @@ function checkDomain() {
         })
         .catch(error => {
             console.error('Error:', error);
-            resultDiv.innerHTML = '<p>查询失败！请联系jhhofficail@gmail.com</p>';
+            resultDiv.innerHTML = `<p>查询失败：${error.message}</p>`;
             queryButton.disabled = false;
             queryButton.textContent = '查询';
         });
