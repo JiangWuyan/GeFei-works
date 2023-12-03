@@ -19,7 +19,7 @@ app.get('/whois', async (req, res) => {
             const data = await response.json();
             res.json(data);
         } else {
-            // 处理非成功的响应
+            // 处理失败响应
             res.status(response.status).send(`Error: ${response.statusText}`);
         }
     } catch (error) {
