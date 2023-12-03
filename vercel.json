@@ -3,14 +3,17 @@
   "builds": [
     {
       "src": "server/app.js",
-      "use": "@vercel/node",
-      "config": { "nodeVersion": "18.x" }
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/whois",
       "dest": "server/app.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ]
 }
