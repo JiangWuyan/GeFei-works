@@ -1,3 +1,23 @@
 {
-  "version": 2
+  "version": 2,
+  "builds": [
+    {
+      "src": "server/app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/whois/(.*)",
+      "dest": "server/app.js"
+    },
+    {
+      "src": "/(.+\\.(css|js|svg|png|jpg|gif|ico|html))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
+    }
+  ]
 }
