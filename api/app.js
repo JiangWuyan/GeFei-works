@@ -5,6 +5,7 @@ const app = express();
 
 // 使用cors中间件启用CORS，对所有来源开放
 app.use(cors());
+app.use(express.json());
 
 app.get('/whois', async (req, res) => {
     const { name, suffix } = req.query;
