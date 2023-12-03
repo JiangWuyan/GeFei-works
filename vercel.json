@@ -8,16 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/whois",
-      "dest": "api/app.js"
-    },
-    {
-      "src": "/(.+\\.(css|js|svg|png|jpg|gif|ico|html))",
-      "dest": "/$1"
-    },
-    {
-      "src": "/",
-      "dest": "/index.html"
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }
