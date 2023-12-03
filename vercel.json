@@ -1,19 +1,17 @@
 {
   "version": 2,
-  "builds": [
+  "routes": [
     {
-      "src": "server/app.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/whois",
-      "destination": "server/app.js"
+      "src": "/whois",
+      "dest": "/server/app.js"
     },
     {
-      "source": "/(.*)",
-      "destination": "/$1"
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ]
 }
