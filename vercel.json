@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "server/app.js",
+      "src": "api/app.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/whois/(.*)",
-      "dest": "server/app.js"
+      "dest": "api/app.js"
     },
     {
       "src": "/(.+\\.(css|js|svg|png|jpg|gif|ico|html))",
