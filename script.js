@@ -7,7 +7,7 @@ function checkDomain() {
     queryButton.disabled = true;
     queryButton.textContent = '查询中...';
 
-    fetch(`https://whois.freeaiapi.xyz/?name=${domainName}&suffix=${domainSuffix}`)
+    fetch(`https://onereed.xyz/whois?name=${domainName}&suffix=${domainSuffix}`)
         .then(response => response.json())
         .then(data => {
             displayResult(data);
