@@ -3,6 +3,8 @@ const fetch = require('node-fetch');
 const cors = require('cors');
 const app = express();
 
+app.use(express.static('.'));
+
 // 使用cors中间件启用CORS，对所有来源开放
 app.use(cors());
 
