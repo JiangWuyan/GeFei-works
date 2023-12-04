@@ -4,10 +4,6 @@
     {
       "src": "/whois",
       "dest": "api/app.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/"
     }
   ]
 }
