@@ -8,8 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/whois', async (req, res) => {
-    // 从前端获取的参数名称修改为 domainName 和 domainSuffix
-    const { domainName, domainSuffix } = req.query;
+    const { name, suffix } = req.query;
 
     // 设置CORS相关的头部
     res.header("Access-Control-Allow-Origin", "*");
