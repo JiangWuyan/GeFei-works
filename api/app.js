@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/whois', async (req, res) => {
-    const { domainName, domainSuffix } = req.query;
+    const { name, suffix } = req.query;
 
     // 设置CORS相关的头部
     res.header("Access-Control-Allow-Origin", "*");
@@ -16,7 +16,7 @@ app.get('/whois', async (req, res) => {
 
     try {
         // 修改请求的 URL 参数名称
-        const response = await fetch(`https://whois.freeaiapi.xyz/?name=${domainName}&suffix=${domainSuffix}`);
+        const response = await fetch(`https://whois.freeaiapi.xyz/?name=${name}&suffix=${suffix}`);
         if (response.ok) {
             const data = await response.json();
             res.json(data);
