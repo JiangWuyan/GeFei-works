@@ -1,13 +1,13 @@
 function checkDomain() {
-    var domainName = document.getElementById('domainName').value;
-    var domainSuffix = document.getElementById('domainSuffix').value;
+    var name = document.getElementById('name').value;
+    var suffix = document.getElementById('suffix').value;
     var queryButton = document.getElementById('queryButton');
     var resultDiv = document.getElementById('result');
 
     queryButton.disabled = true;
     queryButton.textContent = '查询中...';
 
-    fetch(`https://onereed.xyz/whois?name=${domainName}&suffix=${domainSuffix}`)
+    fetch(`https://onereed.xyz/whois?name=${name}&suffix=${suffix}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('网络响应不是OK');
@@ -56,7 +56,7 @@ function displayResult(data) {
 }
 
 function clearInputs() {
-    document.getElementById('domainName').value = '';
-    document.getElementById('domainSuffix').value = '';
+    document.getElementById('name').value = '';
+    document.getElementById('suffix').value = '';
     document.getElementById('result').innerHTML = '';
 }
