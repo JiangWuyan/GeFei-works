@@ -1,3 +1,23 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // 给输入框添加事件监听器
+    document.getElementById('name').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            checkDomain();
+        }
+    });
+
+    document.getElementById('suffix').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            checkDomain();
+        }
+    });
+
+    // 给查询按钮添加点击事件监听器
+    document.getElementById('queryButton').addEventListener('click', checkDomain);
+});
+
 function checkDomain() {
     console.log("checkDomain called");
     var name = document.getElementById('name').value;
