@@ -1,4 +1,5 @@
 function checkDomain() {
+    console.log("checkDomain called");
     var name = document.getElementById('name').value;
     var suffix = document.getElementById('suffix').value;
     var queryButton = document.getElementById('queryButton');
@@ -33,6 +34,7 @@ function checkDomain() {
             queryButton.disabled = false;
             queryButton.textContent = '查询';
         });
+    console.log("checkDomain finished");
 }
 
 function displayResult(data) {
