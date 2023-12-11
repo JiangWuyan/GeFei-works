@@ -28,7 +28,7 @@ function checkDomain() {
     queryButton.disabled = true;
     queryButton.textContent = '查询中...';
 
-    fetch(`https://onereed.xyz/whois?name=${name}&suffix=${suffix}`)
+    fetch(`https://onereed.xyz/checkdomain?name=${name}&suffix=${suffix}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('网络响应不是OK');
