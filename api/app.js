@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/whois', async (req, res) => {
+app.get('/checkdomain', async (req, res) => {
     const { name, suffix } = req.query;
 
     // 设置CORS相关的头部
